@@ -1,12 +1,14 @@
-import express  from "express";
-import { createCourse, deleteCourse,updateCourse,getCourses,getCourse } from "../controllers/course.controller.js";
-import { verifyToken } from "../utils/verifyUser.js";
+import express from 'express';
+import { verifyToken } from '../utils/verifyUser.js';
+import { create, getPosts,deletePost,updatePost } from '../controllers/post.controller.js';
+
 
 const router = express.Router();
 
-router.post('/create', verifyToken, createListing);
-router.delete('/delete/:id', verifyToken, deleteListing);
-router.post('/update/:id', verifyToken, updateUserListing);
-router.get('/get/:id', getListing);
-router.get('/get', getListings);
+router.post('/create/:userId', verifyToken, create);
+router.get('/getposts', getPosts );
+router.delete('/deletepost/:postId/:userId', verifyToken, deletePost);
+router.put('/updatepost/:postId/:userId', verifyToken, updatePost);
+
+
 export default router;
