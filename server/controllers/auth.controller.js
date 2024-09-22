@@ -1,6 +1,7 @@
 import User from '../models/user.model';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import { errorHandler } from '../utils/error';
 dotenv.config();
 
 export const signup = async (req, res,next) => {

@@ -1,5 +1,6 @@
 import User from "../models/user.model";
 import bcryptjs from "bcryptjs";
+import { errorHandler } from "../utils/error";
 
 export const test = (req, res) => {
   res.send("User route working");
